@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Julien Derguy</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:300,400,500,700,900" rel="stylesheet">
+    
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/icon-line/css/simple-line-icons.css">
+  <link rel="stylesheet" href="assets/vendor/icon-hs/style.css">
+  <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" href="assets/vendor/animate.css">
+  <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+
+  <!-- CSS Template -->
+  <link rel="stylesheet" href="assets/css/styles.op-architecture.css">
+</head>
+<body>
+  <app-root></app-root>
+<!-- JS Global Compulsory -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="assets/vendor/popper.js/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="assets/vendor/appear.js"></script>
+<script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="assets/vendor/gmaps/gmaps.min.js"></script>
+
+<!-- JS Unify -->
+<script src="assets/js/hs.core.js"></script>
+<script src="assets/js/components/hs.header.js"></script>
+<script src="assets/js/helpers/hs.hamburgers.js"></script>
+<script src="assets/js/components/hs.scroll-nav.js"></script>
+<script src="assets/js/components/hs.tabs.js"></script>
+<script src="assets/js/components/hs.carousel.js"></script>
+<script src="assets/js/components/gmap/hs.map.js"></script>
+<script src="assets/js/components/hs.go-to.js"></script>
+
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+
+ <!-- JS Plugins Init. -->
+ <script>
+    // initialization of google map
+    function initMap() {
+      $.HSCore.components.HSGMap.init('.js-g-map');
+    }
+
+    $(document).on('ready', function () {
+      // initialization of carousel
+      $.HSCore.components.HSCarousel.init('.js-carousel');
+
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#js-header'));
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+      // initialization of tabs
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+      // initialization of go to section
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+
+      $('#processes [role="tablist"] .nav-link').on('click', function () {
+        setTimeout(function () {
+          $('#processesTabs .js-carousel').slick('setPosition');
+        }, 200);
+      });
+    });
+
+    $(window).on('load', function() {
+      // initialization of HSScrollNav
+      $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+        duration: 700
+      });
+    });
+
+    $(window).on('resize', function () {
+      setTimeout(function () {
+        $.HSCore.components.HSTabs.init('[role="tablist"]');
+      }, 200);
+    });
+ </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async></script>
+</body>
+</html>
