@@ -5,3 +5,9 @@
 
 // Mixins
 @import "custom.mixins";
+
+.logo-custom {
+    img {
+        width: 55px;
+    }
+}
