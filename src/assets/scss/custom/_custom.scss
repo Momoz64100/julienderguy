@@ -6,8 +6,22 @@
 // Mixins
 @import "custom.mixins";
 
+@import "../variables.op-architecture";
+
 .logo-custom {
     img {
-        width: 55px;
+        width: 60px;
     }
+}
+
+.fa-templated {
+    color: $g-color-primary;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-30 {
+    margin-top: 30px;
 }
