@@ -39,7 +39,8 @@
     init: function (selector, config) {
 
       this.collection = selector && $(selector).length ? $(selector) : $();
-      if (!$(selector).length) return;
+      
+      // if (!$(selector).length) return;
 
       this.config = config && $.isPlainObject(config) ?
         $.extend({}, this._baseConfig, config) : this._baseConfig;
